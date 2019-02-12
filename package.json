@@ -1,0 +1,7 @@
+{
+  "name": "node-graphql-starter",
+  "version": "0.0.1",
+  "repository": "https://github.com/matt-sungwook/node-graphql-starter.git",
+  "author": "matt-sungwook <hisw0509@gmail.com> (https://github.com/matt-sungwook)",
+  "license": "MIT"
+}
