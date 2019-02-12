@@ -1,0 +1,29 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "allowJs": true,
+    "allowUnreachableCode": true,
+    "allowUnusedLabels": true,
+    "alwaysStrict": true,
+    "esModuleInterop": true,
+    "lib": [
+      "esnext"
+    ],
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "noUnusedParameters": false,
+    "outDir": "../dist",
+    "pretty": true,
+    "removeComments": true,
+    "rootDir": "../src",
+    "target": "es6"
+  },
+  "exclude": [
+    "**/node_modules",
+    "**/*.spec.[jt]s*",
+    "**/*.test.[jt]s*"
+  ],
+  "include": [
+    "../src/**/*"
+  ]
+}

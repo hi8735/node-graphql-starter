@@ -1,0 +1,9 @@
+{
+  "watch": "src",
+  "ext": "js,json,ts",
+  "ignore": [
+    "*.spec.[jt]s*",
+    "*.test.[jt]s*"
+  ],
+  "verbose": true
+}
