@@ -1,0 +1,10 @@
+"""
+Learn more about writing GraphQL SDL
+@ [here](https://www.apollographql.com/docs/apollo-server/essentials/schema.html)
+"""
+type Query {
+  author(name: String!): Author
+  getBookByISBN(isbn: String!): Book
+  getBookByTitle(title: String!): Book
+  getBooksByAuthor(authorName: String!): [Book]
+}
