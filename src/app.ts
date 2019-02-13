@@ -1,10 +1,13 @@
 import { ApolloServer, Config } from "apollo-server";
 import chalk from "chalk";
 import express = require("express");
+
 import { timestampMessage } from "./util/consoleHelper";
+import { getTypeDefs } from "./graphql/schemaReader";
+
 
 const apolloConfig: Config = {
-  typeDefs: [],
+  typeDefs: getTypeDefs(),
   resolvers: {},
   context: ({ req }: { req: express.Request }) => {
     const authoriationToken = req.headers.authoriation || '';
