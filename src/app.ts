@@ -1,20 +1,23 @@
 import { ApolloServer, Config } from "apollo-server";
 import chalk from "chalk";
 import express = require("express");
-
-import { timestampMessage } from "./util/consoleHelper";
-import { getTypeDefsAsync } from "./graphql/schemaReader";
 import { DocumentNode } from "graphql";
+
+import rootResolver from "./graphql/resolvers/rootResolver";
+import { getTypeDefsAsync } from "./graphql/schemaReader";
+import { timestampMessage } from "./util/consoleHelper";
+import GraphQLContext from "./graphql/GraphQLContext";
 
 let typeDefs: DocumentNode[];
 getTypeDefsAsync().then((value) => {
+  console.log(chalk.greenBright(timestampMessage('GraphQL schemas loaded.')));
   typeDefs = value;
-  
+
   const apolloConfig: Config = {
     typeDefs: typeDefs,
-    resolvers: {},
-    context: ({ req }: { req: express.Request }) => {
-      const authoriationToken = req.headers.authoriation || '';
+    resolvers: rootResolver,
+    context: ({ req }: { req: express.Request }): GraphQLContext => {
+      const authoriationToken = req.headers.authorization;
       return { authorizationToken: authoriationToken };
     },
     debug: process.env.NODE_ENV !== 'production',
