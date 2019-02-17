@@ -1,6 +1,18 @@
-import { Book } from "../data/types";
+import { Book, Author } from "./types";
 
-export const books: Book[] = [
+const authors: Author[] = [
+  {
+    name: "Jack E. Davis",
+  },
+  {
+    name: "Lin-Manuel Miranda",
+  },
+  {
+    name: "Jeremy McCarter",
+  },
+];
+
+const books: Book[] = [
   {
     isbn: "978-1631494024",
     title: "The Gulf: The Making of An American Sea",
@@ -25,3 +37,8 @@ export const books: Book[] = [
     price: 45
   }
 ];
+
+export default {
+  authors,
+  books,
+};
