@@ -3,6 +3,6 @@ Learn more about writing GraphQL SDL
 @ [here](https://www.apollographql.com/docs/apollo-server/essentials/schema.html)
 """
 type Mutation {
-  addAuthor(author: Author!): Author
-  addBook(book: Book!): Book
+  addAuthor(author: AuthorInput!): Author
+  addBook(book: BookInput!): Book
 }

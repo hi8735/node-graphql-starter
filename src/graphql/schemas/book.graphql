@@ -24,3 +24,26 @@ type Book {
   """
   price: Float
 }
+
+input BookInput {
+  """
+  The ISBN of the book
+  This is the key
+  """
+  isbn: String!
+
+  """
+  The title of the book
+  """
+  title: String!
+
+  """
+  The author(s) of the book
+  """
+  authors: [AuthorInput]!
+
+  """
+  The price of the book, which can be omitted
+  """
+  price: Float
+}

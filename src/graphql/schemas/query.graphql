@@ -7,4 +7,5 @@ type Query {
   getBookByISBN(isbn: String!): Book
   getBookByTitle(title: String!): Book
   getBooksByAuthor(authorName: String!): [Book]
+  hello: String
 }
