@@ -7,17 +7,17 @@ type Book {
   The ISBN of the book
   This is the key
   """
-  isbn: String!
+  isbn: String
 
   """
   The title of the book
   """
-  title: String!
+  title: String
 
   """
   The author(s) of the book
   """
-  authors: [Author]!
+  authors: [Author]
 
   """
   The price of the book, which can be omitted

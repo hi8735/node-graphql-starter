@@ -7,7 +7,7 @@ type Author {
   The name of the author
   This is used as the key
   """
-  name: String!
+  name: String
 
   """
   Books written by the author
