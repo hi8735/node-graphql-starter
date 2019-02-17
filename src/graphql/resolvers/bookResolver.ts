@@ -7,13 +7,16 @@ import GraphQLContext from "../GraphQLContext";
 const bookResolver: IResolvers = {
   Query: {
     books: () => sampleData.books,
-    getBookByISBN(source, { isbn }) {
+    getBookByISBN(source, args) {
+      const isbn = args.isbn as string;
       return sampleData.books.find(book => book.isbn === isbn);
     },
-    getBookByTitle: (source, { title }) => {
+    getBookByTitle: (source, args) => {
+      const title = args.title as string;
       return sampleData.books.find(book => book.title === title);
     },
-    getBooksByAuthor(source, { authorName }) {
+    getBooksByAuthor(source, args) {
+      const authorName = args.authorName as string;
       return sampleData.books.map(book => {
         return book.authors.find(author => author.name == authorName);
       });

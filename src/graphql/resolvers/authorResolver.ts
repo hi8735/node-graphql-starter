@@ -8,8 +8,8 @@ const authorResolver: IResolvers = {
   Query: {
     authors: () => sampleData.authors,
     getAuthorByName: (source, args) => {
-      const name: string = args.name;
-      return sampleData.authors.map(author => author.name === name);
+      const name = args.name as string;
+      return sampleData.authors.find(author => author.name === name);
     },
   },
   Mutation: {
