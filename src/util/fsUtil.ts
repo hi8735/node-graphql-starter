@@ -15,13 +15,17 @@ export const readFileAsync = (
   });
 };
 
-export const readDirAsync = (path: PathLike) => {
+export const readDirAsync = (path: PathLike, ext?: string) => {
   return new Promise<string[]>((resolve, reject) => {
     fs.readdir(path, (err, files) => {
       if (err) {
         reject(err);
       } else {
-        resolve(files);
+        if (ext && ext.length > 0) {
+          resolve(files.map(file => file.endsWith(ext) && file));
+        } else {
+          resolve(files);
+        }
       }
     });
   });

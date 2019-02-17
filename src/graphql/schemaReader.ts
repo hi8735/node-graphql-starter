@@ -15,7 +15,7 @@ export const getTypeDefsAsync = async () => {
   const fileNames = await readDirAsync(schemaPath, graphqlExtention);
 
   console.log(chalk.greenBright(timestampMessage(`${fileNames.length} schema files found:`)))
-  console.log(fileNames.map(file => file).join('\n'));
+  console.log(chalk.green(fileNames.map(file => file).join('\n')));
 
   const typeDefs: DocumentNode[] = await Promise.all(
     fileNames.map(
