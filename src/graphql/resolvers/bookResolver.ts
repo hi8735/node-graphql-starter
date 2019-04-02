@@ -2,7 +2,7 @@ import { GraphQLError } from "graphql";
 import { IResolvers } from "graphql-tools";
 import sampleData from "../../data/sampleData";
 import { Book } from "../../data/types";
-import GraphQLContext from "../GraphQLContext";
+import GraphQLContext from "../type/GraphQLContext";
 
 const bookResolver: IResolvers = {
   Query: {

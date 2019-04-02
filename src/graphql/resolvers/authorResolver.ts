@@ -1,6 +1,6 @@
 import { GraphQLError } from "graphql";
 import { IResolvers } from "graphql-tools";
-import GraphQLContext from "../GraphQLContext";
+import GraphQLContext from "../type/GraphQLContext";
 import sampleData from "../../data/sampleData";
 import { Author } from "../../data/types";
 

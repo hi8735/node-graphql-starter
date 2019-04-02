@@ -6,20 +6,21 @@
   "license": "MIT",
   "scripts": {
     "build": "rimraf dist & tsc -p config/tsconfig.json",
+    "build-dev": "rimraf dist & tsc -p config/tsconfig.json --sourceMap=true",
     "local": "nodemon --config config/nodemon.json --exec ts-node --project config/tsconfig.json src/app.ts"
   },
   "dependencies": {
-    "apollo-server": "^2.4.0",
+    "apollo-server": "^2.4.8",
     "chalk": "^2.4.2",
-    "graphql": "^14.1.1",
-    "lodash": "^4.17.11"
+    "config": "^3.0.1",
+    "graphql": "^14.2.1"
   },
   "devDependencies": {
-    "@types/graphql": "^14.0.5",
-    "@types/lodash": "^4.14.121",
+    "@types/config": "^0.0.34",
+    "@types/graphql": "^14.2.0",
     "nodemon": "^1.18.10",
     "rimraf": "^2.6.3",
-    "ts-node": "^8.0.2",
-    "typescript": "^3.3.3"
+    "ts-node": "^8.0.3",
+    "typescript": "^3.3.4"
   }
 }
