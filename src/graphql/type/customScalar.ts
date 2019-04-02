@@ -1,12 +1,13 @@
-import { GraphQLScalarType, Kind } from "graphql";
+import { GraphQLScalarType, Kind, ValueNode } from "graphql";
 
 namespace CustomScalar {
+
   export const date = new GraphQLScalarType({
     name: "Date",
-    description: "Date type",
+    description: "Date custom scalar",
     parseValue: (value: string): Date => new Date(value),
-    serialize: (value: Date): string => value.toISOString(),
-    parseLiteral: (ast): Date => ast.kind === Kind.INT ? new Date(ast.value) : null,
+    serialize: (value: Date): string => value.getTime() && value.toISOString(),
+    parseLiteral: (valueNode: ValueNode): Date => valueNode.kind === Kind.STRING ? new Date(valueNode.value) : null,
   });
 }
 

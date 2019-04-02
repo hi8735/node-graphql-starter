@@ -12,7 +12,7 @@ type Mutation {
   """
   A test mutation that returns the input value
   """
-  test(value: Int!): Int!
+  test(value: Date!): Date
 }
 
 type PageInfo {
