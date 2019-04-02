@@ -1,0 +1,56 @@
+"Date custom scalar (ISO string)"
+scalar Date
+
+type Query {
+  """
+  Returns the timezone offset of the server
+  """
+  serverTimezoneOffset: Int!
+}
+
+type Mutation {
+  """
+  A test mutation that returns the input value
+  """
+  test(value: Int!): Int!
+}
+
+type PageInfo {
+  hasPreviousPage: Boolean!
+  hasNextPage: Boolean!
+  startCursor: String!
+  endCursor: String!
+  totalCount: Int!
+}
+
+input PaginationFilter {
+  """
+  The cursor of the first item to be returned
+  """
+  after: String
+  """
+  The number of items to be returned
+  """
+  first: Int
+  """
+  Sort criteria
+  """
+  sort: [SortCriteria!]
+}
+
+input SortCriteria {
+  """
+  Field name to be sorted
+  """
+  field: String!
+  """
+  Sort direction (ASC, DESC)
+  Default = ASC
+  """
+  direction: SortDirection = ASC
+}
+
+enum SortDirection {
+  ASC
+  DESC
+}

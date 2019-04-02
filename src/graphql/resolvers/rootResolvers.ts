@@ -1,6 +1,5 @@
 import { IResolvers } from "graphql-tools";
-import authorResolver from "./authorResolver";
-import bookResolver from "./bookResolver";
+import customScalar from "../type/customScalar";
 
 const rootResolvers: IResolvers = {
   Query: {
@@ -8,6 +7,7 @@ const rootResolvers: IResolvers = {
   },
   Mutation: {
   },
+  ...customScalar,
 };
 
 export default rootResolvers;
