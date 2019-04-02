@@ -4,7 +4,8 @@ import {
   ServerInfo,
 } from "apollo-server";
 import chalk from "chalk";
-import express = require("express");
+import dotenv from "dotenv";
+import express from "express";
 import { formatError } from "graphql";
 import GraphQLContext from "./graphql/type/GraphQLContext";
 import rootResolvers from "./graphql/resolvers/rootResolvers";
@@ -12,8 +13,9 @@ import { makeTimestampMessage } from "./util/consoleTools";
 import { readAllTypeDefs } from "./util/graphQLTools";
 
 (async() => {
-  try {    
-    const typeDefs = await readAllTypeDefs(__dirname + "/graphql/typeDefinition");
+  try {
+    dotenv.config();
+    const typeDefs = await readAllTypeDefs(__dirname + process.env.GRAPHQL_EXT, process.env.GRAPHQL_PATH);
     const apolloConfig: Config = {
       typeDefs: typeDefs,
       resolvers: rootResolvers,
