@@ -1,7 +1,10 @@
 # node-graphql-starter
-A simple node.js GraphQL API quickstart
+Quickstart your node.js GraphQL API server with this dead-simple starter template!
 
-## How to use
+## Prerequisites
+- Node.js installed
+
+## Getting Started
 1. Clone the repository
 ```
 git clone https://github.com/matt-sungwook/node-graphql-starter.git my-project
@@ -14,7 +17,7 @@ cd my-project
 ```
 npm install
 ```
-4. Start the server and build your application!
+4. Start the server and build your application
 ```
 npm run localhost
 ```
