@@ -1,9 +1,9 @@
 {
   "watch": "src",
-  "ext": "graphql,js,json,ts",
+  "ext": "graphql,ts",
   "ignore": [
-    "*.spec.[jt]s*",
-    "*.test.[jt]s*"
+    "*.spec.ts*",
+    "*.test.ts*"
   ],
   "verbose": true
 }

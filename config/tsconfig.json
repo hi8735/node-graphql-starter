@@ -1,7 +1,6 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "allowJs": true,
     "allowUnreachableCode": true,
     "allowUnusedLabels": true,
     "alwaysStrict": true,
@@ -20,8 +19,8 @@
   },
   "exclude": [
     "**/node_modules",
-    "**/*.spec.[jt]s*",
-    "**/*.test.[jt]s*"
+    "**/*.spec.ts*",
+    "**/*.test.ts*"
   ],
   "include": [
     "../src/**/*"
