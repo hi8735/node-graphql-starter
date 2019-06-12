@@ -1,20 +1,23 @@
 {
   "name": "node-graphql-starter",
-  "version": "0.0.1",
-  "repository": "https://github.com/matt-sungwook/node-graphql-starter.git",
+  "version": "0.0.2",
   "author": "matt-sungwook <hisw0509@gmail.com> (https://github.com/matt-sungwook)",
   "license": "MIT",
+  "repository": "https://github.com/matt-sungwook/node-graphql-starter.git",
   "scripts": {
     "build": "gulp --gulpfile config/gulpfile.js",
-    "localhost": "cross-env NODE_ENV=localhost & npm run nodemon:start",
-    "nodemon:start": "nodemon --config config/nodemon.json --exec ts-node --project config/tsconfig.json src/app.ts"
+    "local": "cross-env NODE_ENV=localhost & npm run nodemon:start",
+    "nodemon:start": "nodemon --config config/nodemon.json --exec ts-node --project config/tsconfig.json src/server.ts",
+    "start": "node dist/server.js"
   },
   "dependencies": {
     "apollo-server": "^2.4.8",
     "chalk": "^2.4.2",
+    "dotenv": "^8.0.0",
     "graphql": "^14.2.1"
   },
   "devDependencies": {
+    "@types/dotenv": "^6.1.1",
     "@types/graphql": "^14.2.0",
     "cross-env": "^5.2.0",
     "gulp": "^4.0.0",

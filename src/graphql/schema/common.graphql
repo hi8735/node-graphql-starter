@@ -2,55 +2,63 @@
 scalar Date
 
 type Query {
-  """
-  Returns the timezone offset of the server
-  """
+  "Returns the timezone offset of the server"
   serverTimezoneOffset: Int!
 }
 
 type Mutation {
-  """
-  A test mutation that returns the input value
-  """
-  test(value: Date!): Date
+  "A test mutation that returns the input value or OK"
+  health(value: String): String!
 }
 
-type PageInfo {
-  hasPreviousPage: Boolean!
-  hasNextPage: Boolean!
-  startCursor: String!
-  endCursor: String!
-  totalCount: Int!
-}
+# # Use codes below for pagination
+# interface Edge {
+#   cursor: String!
+# }
 
-input PaginationFilter {
-  """
-  The cursor of the first item to be returned
-  """
-  after: String
-  """
-  The number of items to be returned
-  """
-  first: Int
-  """
-  Sort criteria
-  """
-  sort: [SortCriteria!]
-}
+# interface Connection {
+#   "Array of item edges"
+#   edges: [Edge!]!
+#   "Page information"
+#   pageInfo: PageInfo!
+#   "Count of items including not retrieved ones"
+#   totalCount: Int!
+# }
 
-input SortCriteria {
-  """
-  Field name to be sorted
-  """
-  field: String!
-  """
-  Sort direction (ASC, DESC)
-  Default = ASC
-  """
-  direction: SortDirection = ASC
-}
+# type PageInfo {
+#   hasPreviousPage: Boolean!
+#   hasNextPage: Boolean!
+#   startCursor: String!
+#   endCursor: String!
+#   "Number of items in edges"
+#   count: Int!
+# }
 
-enum SortDirection {
-  ASC
-  DESC
-}
+# input OffsetPaginationFilter {
+#   "Number of items to get"
+#   limit: Int
+#   "Number of items to skip"
+#   offset: Int
+# }
+
+# input PaginationFilter {
+#   "Get items after the cursor"
+#   after: String
+#   "Number of items to be returned"
+#   first: Int
+# }
+
+# input SortCriteria {
+#   "Field name to be sorted"
+#   field: String!
+#   """
+#   Sort direction (ASC, DESC)
+#   Default = ASC
+#   """
+#   direction: SortDirection = ASC
+# }
+
+# enum SortDirection {
+#   ASC
+#   DESC
+# }

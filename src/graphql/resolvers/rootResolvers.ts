@@ -1,20 +1,13 @@
 import { IResolvers } from "graphql-tools";
-import customScalar from "../type/customScalar";
+import { defaultResolvers } from "./defaultResolvers";
+import { dateScalar } from "./customScalars";
 
-namespace Resolvers {
-
-  const serverTimezoneOffset = (): number => new Date().getTimezoneOffset() / 60 * -1;
-
-  export const rootResolvers: IResolvers = {
-    Query: {
-      serverTimezoneOffset: serverTimezoneOffset,
-    },
-    Mutation: {
-      test: (parent: any, args: { value: number }): number => args.value,
-    },
-    ...customScalar,
-  };
-}
-
-
-export default Resolvers.rootResolvers;
+export const rootResolvers: IResolvers = {
+  Query: {
+    ...defaultResolvers.query,
+  },
+  Mutation: {
+    ...defaultResolvers.mutation,
+  },
+  Date: dateScalar,
+};
