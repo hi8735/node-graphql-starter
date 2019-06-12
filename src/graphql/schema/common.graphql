@@ -34,6 +34,7 @@ type Mutation {
 #   count: Int!
 # }
 
+# "Offset-based pagination filter"
 # input OffsetPaginationFilter {
 #   "Number of items to get"
 #   limit: Int
@@ -41,13 +42,15 @@ type Mutation {
 #   offset: Int
 # }
 
-# input PaginationFilter {
+# "Cursor-based pagination filter"
+# input CursorPaginationFilter {
 #   "Get items after the cursor"
 #   after: String
 #   "Number of items to be returned"
 #   first: Int
 # }
 
+# # Use codes below for sorting
 # input SortCriteria {
 #   "Field name to be sorted"
 #   field: String!
