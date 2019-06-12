@@ -19,7 +19,7 @@ npm install
 ```
 4. Start the server and build your application
 ```
-npm run localhost
+npm run local
 ```
 
 ## License
